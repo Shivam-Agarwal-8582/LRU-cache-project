@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LRU Cache Simulator</title>
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧠 LRU Cache Simulator</h1>
+    <p>Visualize how an LRU cache works step‑by‑step.</p>
+  </header>
+
+  <section class="controls">
+    <div class="capacity-control">
+      <label for="capacity-input">Capacity:</label>
+      <input type="number" id="capacity-input" min="1" value="3" />
+    </div>
+    <div class="put-control">
+      <input type="number" id="put-key" placeholder="Key" />
+      <input type="number" id="put-value" placeholder="Value" />
+      <button id="put-btn">PUT</button>
+    </div>
+    <div class="get-control">
+      <input type="number" id="get-key" placeholder="Key" />
+      <button id="get-btn">GET</button>
+    </div>
+  </section>
+
+  <section class="visualization">
+    <div class="cache-panel">
+      <h2>Cache (Doubly Linked List)</h2>
+      <div id="dll-container" class="dll"></div>
+    </div>
+    <div class="map-panel">
+      <h2>HashMap</h2>
+      <table id="hashmap-table">
+        <thead>
+          <tr><th>Key</th><th>Node</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="log-panel">
+    <h2>Operation Log</h2>
+    <textarea id="log" rows="8" readonly></textarea>
+  </section>
+
+  <section class="stats-panel">
+    <h2>Cache Statistics</h2>
+    <p>Hits: <span id="hits">0</span></p>
+    <p>Misses: <span id="misses">0</span></p>
+    <p>Hit Rate: <span id="hit-rate">0%</span></p>
+    <h3>Time Complexity</h3>
+    <ul>
+      <li>PUT : O(1)</li>
+      <li>GET : O(1)</li>
+      <li>Evict : O(1)</li>
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
